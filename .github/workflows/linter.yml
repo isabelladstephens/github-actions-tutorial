@@ -14,10 +14,8 @@ jobs:
           node-version: 20  # Specify your Node.js version
       - name: Install prettier
         run: npm install prettier 
-      - name: Run prettier check
-        run: npx prettier --write "**/*.{js,ts}"
-      - name: Commit formatted files
-        run: |
-          git add -A
-          git commit -m "Prettier formatting"
-          git push
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          auto_fix: false
+          prettier: true
