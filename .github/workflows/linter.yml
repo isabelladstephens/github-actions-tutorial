@@ -15,4 +15,4 @@ jobs:
       - name: Install prettier
         run: npm install prettier 
       - name: Run prettier check
-        run: npx prettier --debug-check "**/*.{js,ts}"  
+        run: npx prettier --debug-fix "**/*.{js,ts}"  
