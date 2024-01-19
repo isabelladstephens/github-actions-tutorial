@@ -15,4 +15,9 @@ jobs:
       - name: Install prettier
         run: npm install prettier 
       - name: Run prettier check
-        run: npx prettier --debug-fix "**/*.{js,ts}"  
+        run: npx prettier --write "**/*.{js,ts}"
+      - name: Commit formatted files
+        run: |
+          git add -A
+          git commit -m "Prettier formatting"
+          git push
