@@ -1,6 +1,5 @@
 name: Lint with Prettier
-
-on: [push] # Run the workflow on push events
+on: [pull_request] # Run the workflow on push events
 
 jobs:
   lint:
@@ -17,5 +16,5 @@ jobs:
       - name: Run linters
         uses: wearerequired/lint-action@v2
         with:
-          auto_fix: false
+          auto_fix: true
           prettier: true
