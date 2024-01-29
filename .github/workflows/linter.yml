@@ -8,7 +8,7 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v3
           with:
-            token: ${{ secrets.WORKFLOW_TOKEN}}
+            token: ${{secrets.WORKFLOW_TOKEN}}
         - name: Setup node with correct version
           uses: actions/setup-node@v3
           with:
