@@ -2,7 +2,6 @@ on: [pull_request_target]
 
 jobs:
   label:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -13,3 +12,4 @@ jobs:
       with:
         repo-token: "${{ secrets.WORKFLOW_TOKEN }}"
         configuration-path: ".github/labeler_config.yml"
+

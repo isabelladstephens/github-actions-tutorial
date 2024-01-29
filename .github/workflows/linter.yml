@@ -2,21 +2,21 @@ name: Lint with Prettier
 on: [pull_request]
 
 jobs:
-    lint:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v3
-          with:
-            token: ${{secrets.WORKFLOW_TOKEN}}
-        - name: Setup node with correct version
-          uses: actions/setup-node@v3
-          with:
-            node-version: 20 # Specify your Node.js version
-        - name: Install prettier
-          run: npm install prettier
-        - name: Run linters
-          uses: wearerequired/lint-action@v2
-          with:
-            auto_fix: true
-            prettier: true
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.WORKFLOW_TOKEN}}
+      - name: Setup node with correct version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20 # Specify your Node.js version
+      - name: Install prettier
+        run: npm install prettier
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          auto_fix: true
+          prettier: true
