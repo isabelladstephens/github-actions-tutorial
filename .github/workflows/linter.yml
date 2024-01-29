@@ -1,5 +1,5 @@
 name: Lint with Prettier
-on: [pull_request] # Run the workflow on push events
+on: [pull_request]
 
 jobs:
   lint:
@@ -7,6 +7,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.WORKFLOW_TOKEN}}
       - name: Setup node with correct version
         uses: actions/setup-node@v3
         with:
